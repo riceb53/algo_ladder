@@ -155,20 +155,20 @@
 # Find the largest palindrome made from the product of two 3-digit numbers.
 
 
-def largest_palindrome(digits):
-    max_num = (10 ** digits) - 1
-    max_num_2 = max_num
-    largest_palindrome = 0
-    while max_num > 0:
-        while max_num_2 > 0:
-            product = max_num * max_num_2
-            product_str = str(product)
-            if product_str == product_str[::-1]:
-                if product > largest_palindrome:
-                    largest_palindrome = product 
-            max_num_2 -= 1
-        max_num_2 = (10 ** digits) - 1
-        max_num -= 1
-    return largest_palindrome
+# def largest_palindrome(digits):
+#     max_num = (10 ** digits) - 1
+#     max_num_2 = max_num
+#     largest_palindrome = 0
+#     while max_num > 0:
+#         while max_num_2 > 0:
+#             product = max_num * max_num_2
+#             product_str = str(product)
+#             if product_str == product_str[::-1]:
+#                 if product > largest_palindrome:
+#                     largest_palindrome = product 
+#             max_num_2 -= 1
+#         max_num_2 = (10 ** digits) - 1
+#         max_num -= 1
+#     return largest_palindrome
 
-print(largest_palindrome(3) == 906609)
+# print(largest_palindrome(3) == 906609)

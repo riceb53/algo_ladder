@@ -352,34 +352,34 @@
 # {title: 'Review of the New "Unbreakable Mug"', views: 202, author_name: 'Ichabod Loadbearer' },
 # ]
 
-def etl3(videos, users):
-    users_dict = {}
-    filtered_videos = []
-    for user in users:
-        users_dict[user["id"]] = user['first_name'] + " " + user['last_name']
+# def etl3(videos, users):
+#     users_dict = {}
+#     filtered_videos = []
+#     for user in users:
+#         users_dict[user["id"]] = user['first_name'] + " " + user['last_name']
     
-    for video in videos:
-        if video['views'] > 100:
-            new_video = {}
-            new_video['author_name'] = users_dict[video['author_id']]
-            new_video['views'] = video['views']
-            new_video['title'] = video['title']
-            filtered_videos.append(new_video)    
-    return filtered_videos
+#     for video in videos:
+#         if video['views'] > 100:
+#             new_video = {}
+#             new_video['author_name'] = users_dict[video['author_id']]
+#             new_video['views'] = video['views']
+#             new_video['title'] = video['title']
+#             filtered_videos.append(new_video)    
+#     return filtered_videos
         
 
 
-print(etl3([
-{"title": 'How to Make Wood', "author_id": 4, "views": 6},
-{"title": 'How to Seem Perfect', "author_id": 4, "views": 111},
-{"title": 'Review of the New "Unbreakable Mug"', "author_id": 2, "views": 202},
-{"title": 'Why Pigs Stink', "author_id": 1, "views": 12}
-], [
-{"id": 1, "first_name": 'Jazz', "last_name": 'Callahan'},
-{"id": 2, "first_name": 'Ichabod', "last_name": 'Loadbearer'},
-{"id": 3, "first_name": 'Saron', "last_name": 'Kim'},
-{"id": 4, "first_name": 'Teena', "last_name": 'Burgess'},
-]) == [
-{"title": 'How to Seem Perfect', "views": 111, "author_name": 'Teena Burgess' },
-{"title": 'Review of the New "Unbreakable Mug"', "views": 202, "author_name": 'Ichabod Loadbearer' },
-])
+# print(etl3([
+# {"title": 'How to Make Wood', "author_id": 4, "views": 6},
+# {"title": 'How to Seem Perfect', "author_id": 4, "views": 111},
+# {"title": 'Review of the New "Unbreakable Mug"', "author_id": 2, "views": 202},
+# {"title": 'Why Pigs Stink', "author_id": 1, "views": 12}
+# ], [
+# {"id": 1, "first_name": 'Jazz', "last_name": 'Callahan'},
+# {"id": 2, "first_name": 'Ichabod', "last_name": 'Loadbearer'},
+# {"id": 3, "first_name": 'Saron', "last_name": 'Kim'},
+# {"id": 4, "first_name": 'Teena', "last_name": 'Burgess'},
+# ]) == [
+# {"title": 'How to Seem Perfect', "views": 111, "author_name": 'Teena Burgess' },
+# {"title": 'Review of the New "Unbreakable Mug"', "views": 202, "author_name": 'Ichabod Loadbearer' },
+# ])
